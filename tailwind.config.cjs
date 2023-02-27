@@ -9,6 +9,7 @@ module.exports = {
       colors: {
         accent: "#FFB84C",
         body: "#3A1078",
+        midaqua: "#B5F1CC",
       },
     },
   },

@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter } from "react-router-dom";
 import Header from "./components/Header";
 import Navigation from "./components/Navigation";
-import Trending from "./components/Trending";
+import Trending from "./components/Trending Home/TrendingMovies";
 import Home from "./pages/Home";
 
 function App() {
@@ -11,7 +11,7 @@ function App() {
       <>
         <Header />
         <Navigation />
-        <Trending />
+        
       </>
     </BrowserRouter>
   );
