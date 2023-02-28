@@ -23,8 +23,8 @@ const HorrorMovies = () => {
   }, []);
 
   return (
-    <div className="pl-4 lg:pl-8 mt-8 pb-10">
-      <h2 className="text-teal-100 text-center lg:text-left font-medium text-2xl lg:text-2xl mb-6">
+    <div className="pl-6 lg:pl-8 mt-8 pb-4">
+      <h2 className="text-white text-center lg:text-left font-medium text-2xl lg:text-2xl mb-6">
         Horror Movies
       </h2>
       <div className="carousel carousel-center max-w-full space-x-4 rounded-box">

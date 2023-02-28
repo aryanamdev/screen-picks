@@ -17,10 +17,6 @@ const Card = ({ id, title, poster, rating, releaseDate }) => {
           className="rounded-xl object-cover w-full h-full"
         />
       </figure>
-      {/* <div className="flex flex-col justify-end text-white items-center text-center">
-        <h2 className="card-title">{title}</h2>
-        <div className="bg-red-500 px-3 py-1 mt-2 rounded-md">{rating}</div>
-      </div> */}
     </div>
   );
 };

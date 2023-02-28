@@ -4,6 +4,7 @@ import TrendingSeries from "../components/Trending Home/TrendingSeries";
 import TopRatedMovies from "../components/TopRatedMovies/TopRatedMovies";
 import HorrorMovies from "../components/HorrorMovies/Horror";
 import ActionMovies from "../components/Action/Action";
+import Header from "../components/Header";
 
 function Home() {
   return (

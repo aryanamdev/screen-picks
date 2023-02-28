@@ -1,7 +1,12 @@
 import React from "react";
+import Form from "../components/Form";
 
 function Movies() {
-  return <div>This is movies Page!</div>;
+  return (
+    <>
+      <Form />
+    </>
+  );
 }
 
 export default Movies;
