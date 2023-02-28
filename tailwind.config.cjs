@@ -11,6 +11,9 @@ module.exports = {
         body: "#3A1078",
         midaqua: "#B5F1CC",
       },
+      height : {
+        vh: "98vh"
+      }
     },
   },
   plugins: [require("daisyui")],

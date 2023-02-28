@@ -2,6 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+html,
 body {
   background-color: #2e1e45;
+  scroll-behavior: smooth;
+}
+
+@media screen and (min-width: 600px) {
+  html,
+body {
+  background-color: #2e1e45;
+  scroll-behavior: smooth;
+  scroll-snap-align: smooth;
+}
+
 }

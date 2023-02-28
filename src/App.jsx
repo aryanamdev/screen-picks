@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter } from "react-router-dom";
-import Header from "./components/Header";
-import Navigation from "./components/Navigation";
+import Header from "../src/components/header/Header";
+import Navigation from "../src/components/header/Navigation";
 
 function App() {
   return (

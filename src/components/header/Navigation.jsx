@@ -1,8 +1,8 @@
 import React from "react";
 import { Link, Routes, Route } from "react-router-dom";
-import Home from "../pages/Home";
-import Movies from "../pages/Movies";
-import TvSeriesAndShows from "../pages/TvSeriesAndShows";
+import Home from "../../pages/Home";
+import Movies from "../../pages/Movies";
+import TvSeriesAndShows from "../../pages/TvSeriesAndShows";
 
 function Navigation() {
   return (
