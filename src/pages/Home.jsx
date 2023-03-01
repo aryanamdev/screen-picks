@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import TrendingMovies from "../components/homePageComponents/TrendingMovies";
 import CustomModal from "../components/modal/CustomModal";
 import GenreComponent from "../components/genre/genreComponent";
+import ActionAndAdventure from "../components/homePageComponents/ActionAndAdventure";
+import Romance from "../components/homePageComponents/Romance";
 
 function Home() {
   const [modal, setModal] = useState(false);
@@ -31,6 +33,8 @@ function Home() {
         />
       )}
       <TrendingMovies modalDisplay={modalDisplay} setId={setId} />
+      <ActionAndAdventure modalDisplay={modalDisplay} setId={setId} />
+      <Romance modalDisplay={modalDisplay} setId={setId} />
     </>
   );
 }

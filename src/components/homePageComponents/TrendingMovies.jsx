@@ -13,7 +13,7 @@ const Trending = ({ modalDisplay, setId, key }) => {
 
       console.log(data);  
 
-      setContent(data.results);
+      setContent(data.results.slice(0,8));
     } catch (error) {
       console.log(error);
     }

@@ -1,18 +1,19 @@
 import React, { Suspense, useEffect, useState } from "react";
 import axios from "axios";
-const TrendingCard = React.lazy(() => import("../movieCard/Card.jsx"));
+import CardSkeleton from "../Skeleton/CardSkeleton.jsx";
+const Card = React.lazy(() => import("../movieCard/Card.jsx"));
 
-const HorrorMovies = ({ modalDisplay, setId }) => {
+const ActionAndAdventure = ({ modalDisplay, setId, key }) => {
   const [content, setContent] = useState([]);
 
   const fetchTrending = async () => {
     try {
       const { data } = await axios.get(`
-      https://api.themoviedb.org/3/discover/movie?api_key=36c2c7be701e8ef2309e13bfdf25e942&with_genres=27`);
+      https://api.themoviedb.org/3/discover/movie?api_key=36c2c7be701e8ef2309e13bfdf25e942&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=true&with_watch_monetization_types=flatrate&pages=1&with_genres=28,12`);
 
       console.log(data);
 
-      setContent(data.results);
+      setContent(data.results.slice(0, 8));
     } catch (error) {
       console.log(error);
     }
@@ -25,14 +26,14 @@ const HorrorMovies = ({ modalDisplay, setId }) => {
   return (
     <div className="pl-6 lg:pl-8 mt-8 pb-4">
       <h2 className="text-white text-center lg:text-left font-medium text-2xl lg:text-2xl mb-6">
-        Horror Movies
+        Action & Adventure
       </h2>
       <div className="carousel carousel-center max-w-full space-x-4 rounded-box">
         {content &&
           content.map((val) => {
             return (
-              <Suspense fallback={<div>Loading...</div>}>
-                <TrendingCard
+              <Suspense key={val.id} fallback={<CardSkeleton />}>
+                <Card
                   modalDisplay={modalDisplay}
                   setId={setId}
                   key={val.id}
@@ -52,4 +53,4 @@ const HorrorMovies = ({ modalDisplay, setId }) => {
   );
 };
 
-export default HorrorMovies;
+export default ActionAndAdventure;
