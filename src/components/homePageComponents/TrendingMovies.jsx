@@ -32,7 +32,7 @@ const Trending = ({ modalDisplay, setId, key }) => {
         {content &&
           content.map((val) => {
             return (
-              <Suspense fallback={<CardSkeleton />}>
+              <Suspense key={val.id} fallback={<CardSkeleton />}>
                 <Card
                   modalDisplay={modalDisplay}
                   setId={setId}

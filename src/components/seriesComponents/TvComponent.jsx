@@ -3,7 +3,7 @@ import axios from "axios";
 import CardSkeleton from "../Skeleton/CardSkeleton.jsx";
 const Card = React.lazy(() => import("../movieCard/Card.jsx"));
 
-const SeriesComponent = ({ modalDisplay, setId, page, genreId}) => {
+const TvComponent = ({ modalDisplay, setId, page, genreId }) => {
   const [content, setContent] = useState([]);
 
   const fetchMovies = async () => {
@@ -29,11 +29,12 @@ const SeriesComponent = ({ modalDisplay, setId, page, genreId}) => {
         {content &&
           content.map((val) => {
             return (
-              <Suspense fallback={<CardSkeleton />}>
+              <Suspense key={val.id} fallback={<CardSkeleton />}>
                 <Card
+                  key={val.id}
                   modalDisplay={modalDisplay}
                   setId={setId}
-                  key={val.id}
+                  id={val.id}
                   title={val.title || val.original_name || val.name}
                   poster={val.poster_path}
                   rating={val.vote_average}
@@ -49,4 +50,4 @@ const SeriesComponent = ({ modalDisplay, setId, page, genreId}) => {
   );
 };
 
-export default SeriesComponent;
+export default TvComponent;

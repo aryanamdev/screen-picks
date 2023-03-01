@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import CustomModal from "../components/modal/CustomModal";
+import TvComponent from "../components/seriesComponents/TvComponent";
 import CustomPagination from "../components/Pagination/CustomPagination";
-import GenreComponent from "../components/genre/genreComponent";
-import SeriesComponent from "../components/seriesComponents/seriesComponent";
 import SeriesGenreComponent from "../components/genre/seriesGenre";
 
-function TvSeriesAndShows() {
+function TvSeries() {
   const [page, setPage] = useState(1);
   const [modal, setModal] = useState(false);
   const [id, setId] = useState([]);
@@ -27,7 +26,11 @@ function TvSeriesAndShows() {
 
   return (
     <>
-      <SeriesGenreComponent id={genreId} genre={genreId} handleGenre={handleGenre} />
+      <SeriesGenreComponent
+        id={genreId}
+        genre={genreId}
+        handleGenre={handleGenre}
+      />
       {modal && (
         <CustomModal
           id={id}
@@ -39,7 +42,7 @@ function TvSeriesAndShows() {
           modalDisplay={modalDisplay}
         />
       )}
-      <SeriesComponent
+      <TvComponent
         genreId={genreId}
         modalDisplay={modalDisplay}
         setId={setId}
@@ -50,4 +53,4 @@ function TvSeriesAndShows() {
   );
 }
 
-export default TvSeriesAndShows;
+export default TvSeries;

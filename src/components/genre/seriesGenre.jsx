@@ -31,6 +31,7 @@ export default function SeriesGenreComponent({ genreId, handleGenre }) {
                     handleGenre(e.target.id);
                     console.log(e.target.id);
                   }}
+                  key={v.id}
                   id={v.id}
                   value={v.name}
                 >
