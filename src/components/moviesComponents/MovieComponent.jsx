@@ -14,7 +14,7 @@ const MovieComponent = ({ modalDisplay, setId, page, genreId }) => {
       console.log(data);
 
       setContent(data.results.slice(0, data.results.length - 2));
-    } catch (error) { 
+    } catch (error) {
       console.log(error);
     }
   };
@@ -29,11 +29,11 @@ const MovieComponent = ({ modalDisplay, setId, page, genreId }) => {
         {content &&
           content.map((val) => {
             return (
-              <Suspense fallback={<CardSkeleton />}>
+              <Suspense key={val.id} fallback={<CardSkeleton />}>
                 <Card
+                  key={val.id}
                   modalDisplay={modalDisplay}
                   setId={setId}
-                  key={val.id}
                   id={val.id}
                   title={val.title || val.original_name || val.name}
                   poster={val.poster_path}
