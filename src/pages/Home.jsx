@@ -1,11 +1,7 @@
 import React, { useState } from "react";
 import TrendingMovies from "../components/homePageComponents/TrendingMovies";
-import TrendingSeries from "../components/homePageComponents/TrendingSeries";
-import TopRatedMovies from "../components/homePageComponents/TopRatedMovies";
-import HorrorMovies from "../components/homePageComponents/Horror";
-import ActionMovies from "../components/homePageComponents/Action";
-import Header from "../components/header/Header";
 import CustomModal from "../components/modal/CustomModal";
+import GenreComponent from "../components/genre/genreComponent";
 
 function Home() {
   const [modal, setModal] = useState(false);

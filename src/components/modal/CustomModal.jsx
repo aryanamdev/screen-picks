@@ -25,7 +25,7 @@ export default function CustomModal({ id, modalDisplay }) {
       </div>
       <div className="flex flex-col gap-1 lg:gap-6 lg:w-1/2 items-center lg:items-start text-lg lg:text-xl">
         <h1 className="text-left movie-name">
-          <span className="text-white pr-2 ">Movie Name:</span> {id[1]}
+          <span className="text-white pr-2 ">Name:</span> {id[1]}
         </h1>
 
         <h3 className="release-date mt-3 ">
