@@ -29,6 +29,7 @@ const Card = ({
         <img
           src={`${img_500}/${poster}`}
           alt="Shoes"
+          loading="lazy"
           className="rounded-xl object-cover w-full h-full"
         />
       </figure>

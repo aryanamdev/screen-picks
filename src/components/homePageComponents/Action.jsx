@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { Suspense, useEffect, useState } from "react";
 import axios from "axios";
-import TrendingCard from "../movieCard/Card";
+const TrendingCard = React.lazy(() => import("../movieCard/Card.jsx"));
 
 const ActionMovies = ({ modalDisplay, setId }) => {
   const [content, setContent] = useState([]);
@@ -10,9 +10,8 @@ const ActionMovies = ({ modalDisplay, setId }) => {
       const { data } = await axios.get(`
       https://api.themoviedb.org/3/discover/movie?api_key=36c2c7be701e8ef2309e13bfdf25e942&with_genres=28`);
 
-      console.log(data);
-
       setContent(data.results);
+      console.log(data);
     } catch (error) {
       console.log(error);
     }
@@ -30,7 +29,7 @@ const ActionMovies = ({ modalDisplay, setId }) => {
       <div className="carousel carousel-center max-w-full space-x-4 rounded-box">
         {content &&
           content.map((val) => {
-            return (
+            return (<Suspense fallback={<div>Loading...</div>}>
               <TrendingCard
                 modalDisplay={modalDisplay}
                 setId={setId}
@@ -43,6 +42,7 @@ const ActionMovies = ({ modalDisplay, setId }) => {
                 overview={val.overview}
                 backdrop_path={val.backdrop_path}
               />
+              </Suspense>
             );
           })}
       </div>

@@ -35,10 +35,6 @@ function Home() {
         />
       )}
       <TrendingMovies modalDisplay={modalDisplay} setId={setId} />
-      <TrendingSeries modalDisplay={modalDisplay} setId={setId} />
-      <TopRatedMovies modalDisplay={modalDisplay} setId={setId} />
-      <HorrorMovies modalDisplay={modalDisplay} setId={setId} />
-      <ActionMovies modalDisplay={modalDisplay} setId={setId} />
     </>
   );
 }

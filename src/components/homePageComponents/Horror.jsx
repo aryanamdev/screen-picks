@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { Suspense, useEffect, useState } from "react";
 import axios from "axios";
-import TrendingCard from "../movieCard/Card.jsx";
+const TrendingCard = React.lazy(() => import("../movieCard/Card.jsx"));
 
 const HorrorMovies = ({ modalDisplay, setId }) => {
   const [content, setContent] = useState([]);
@@ -31,18 +31,20 @@ const HorrorMovies = ({ modalDisplay, setId }) => {
         {content &&
           content.map((val) => {
             return (
-              <TrendingCard
-                modalDisplay={modalDisplay}
-                setId={setId}
-                key={val.id}
-                id={val.id}
-                title={val.title || val.original_name || val.name}
-                poster={val.poster_path}
-                rating={val.vote_average}
-                releaseDate={val.first_air_date || val.release_date}
-                overview={val.overview}
-                backdrop_path={val.backdrop_path}
-              />
+              <Suspense fallback={<div>Loading...</div>}>
+                <TrendingCard
+                  modalDisplay={modalDisplay}
+                  setId={setId}
+                  key={val.id}
+                  id={val.id}
+                  title={val.title || val.original_name || val.name}
+                  poster={val.poster_path}
+                  rating={val.vote_average}
+                  releaseDate={val.first_air_date || val.release_date}
+                  overview={val.overview}
+                  backdrop_path={val.backdrop_path}
+                />
+              </Suspense>
             );
           })}
       </div>

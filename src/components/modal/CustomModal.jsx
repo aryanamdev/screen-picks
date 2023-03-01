@@ -23,8 +23,8 @@ export default function CustomModal({ id, modalDisplay }) {
           alt=""
         />
       </div>
-      <div className="flex mt-3 flex-col gap-1 lg:gap-6 lg:w-1/2 items-center lg:items-start text-lg lg:text-xl">
-        <h1 className="text-left movie-name mt-4">
+      <div className="flex flex-col gap-1 lg:gap-6 lg:w-1/2 items-center lg:items-start text-lg lg:text-xl">
+        <h1 className="text-left movie-name">
           <span className="text-white pr-2 ">Movie Name:</span> {id[1]}
         </h1>
 
@@ -34,7 +34,7 @@ export default function CustomModal({ id, modalDisplay }) {
         <h3 className="rating mt-3 ">
           <span className="text-white pr-2 ">Ratings:</span> {id[4].toFixed(1)}
         </h3>
-        <p className="about mt-3 lg:text-left text-center">
+        <p className="about mt-3 lg:text-left text-center text-base">
           <span className="text-white pr-2 ">Overview: </span>
           {id[5]}
         </p>
