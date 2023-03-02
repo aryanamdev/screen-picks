@@ -1,9 +1,6 @@
 import React from "react";
 import { img_500, unavailable } from "../../config/config";
 
-// closing modal function
-// onClick={()=>{modalDisplay(false)}}
-
 export default function CustomModal({ id, modalDisplay }) {
   return (
     <div className="fixed flex flex-col lg:flex-row lg:justify-center items-center h-full backdrop-brightness-50 top-0 p-3 z-20 shadow-2xl bg-purple-900 rounded-md bg-clip-padding backdrop-filter backdrop-blur-2xl bg-opacity-40">
@@ -64,8 +61,8 @@ export default function CustomModal({ id, modalDisplay }) {
             </div>
           </div>
 
-          <p className="font-medium about mt-3 lg:text-left text-center text-base h-28 lg:h-32 overflow-y-scroll scroll scroll-bar lg:pr-5 pr-3">
-            <span className="text-white font-medium pr-2 ">Overview: </span>
+          <p className="font-medium text-white about mt-3 lg:text-left text-center text-base h-28 lg:h-32 overflow-y-scroll scroll scroll-bar lg:pr-5 pr-3">
+            <span className="text-accent font-medium pr-2 ">Overview: </span>
             {id[5]}
           </p>
         </div>

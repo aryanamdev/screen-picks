@@ -2,6 +2,7 @@ import React, { Suspense, useEffect, useState } from "react";
 import axios from "axios";
 import CardSkeleton from "../Skeleton/CardSkeleton.jsx";
 const Card = React.lazy(() => import("../movieCard/Card.jsx"));
+import ScrollContainer from "react-indiana-drag-scroll";
 
 const Horror = ({ modalDisplay, setId, key }) => {
   const [content, setContent] = useState([]);
@@ -28,7 +29,7 @@ const Horror = ({ modalDisplay, setId, key }) => {
       <h2 className="text-white text-center lg:text-left font-medium text-2xl lg:text-2xl mb-6">
         Don't Get Scared
       </h2>
-      <div className="carousel carousel-center max-w-full space-x-4 rounded-box">
+      <ScrollContainer className="carousel carousel-center max-w-full space-x-4 rounded-box">
         {content &&
           content.map((val) => {
             return (
@@ -48,7 +49,7 @@ const Horror = ({ modalDisplay, setId, key }) => {
               </Suspense>
             );
           })}
-      </div>
+      </ScrollContainer>
     </div>
   );
 };
