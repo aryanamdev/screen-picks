@@ -6,7 +6,7 @@ import ActionAndAdventure from "../components/homePageComponents/ActionAndAdvent
 import Romance from "../components/homePageComponents/Documentaries";
 import Horror from "../components/homePageComponents/DontGetScared";
 import TopRatedShows from "../components/homePageComponents/TopRatedShows";
-import Attribution from "../components/attributin/Attribution";
+import Attribution from "../components/attribution/Attribution";
 
 function Home() {
   const [modal, setModal] = useState(false);
