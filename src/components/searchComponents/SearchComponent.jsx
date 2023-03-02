@@ -4,7 +4,14 @@ import CardSkeleton from "../Skeleton/CardSkeleton.jsx";
 const Card = React.lazy(() => import("../movieCard/Card.jsx"));
 import { API_KEY } from "../../config/config.js";
 
-const SearchComponent = ({ modalDisplay, setId, page, search, apiValue }) => {
+const SearchComponent = ({
+  modalDisplay,
+  setId,
+  page,
+  search,
+  apiValue,
+  value,
+}) => {
   const [content, setContent] = useState([]);
 
   const fetchMovies = async () => {

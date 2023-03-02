@@ -24,6 +24,8 @@ function Search() {
     setModal(value);
   };
 
+  const [title, poster, releaseDate, rating, overview] = id;
+
   return (
     <>
       <Form search={search} setSearch={setSearch} />

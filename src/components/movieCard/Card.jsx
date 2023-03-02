@@ -1,5 +1,5 @@
 import React from "react";
-import { img_300 } from "../../config/config";
+import { img_300, unavailable } from "../../config/config";
 
 const Card = ({
   id,
@@ -29,7 +29,7 @@ const Card = ({
         <img
           loading="lazy"
           // style={{ width: "144px", height: "192px" }}
-          src={`${img_300}/${poster}`}
+          src={poster ? `${img_300}/${poster}` : unavailable}
           alt="Shoes"
           className="rounded-xl object-cover"
         />
