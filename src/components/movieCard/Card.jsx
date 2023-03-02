@@ -27,10 +27,11 @@ const Card = ({
       </div>
       <div className="w-36 lg:w-48">
         <img
+          
           loading="lazy"
           // style={{ width: "144px", height: "192px" }}
           src={poster ? `${img_300}/${poster}` : unavailable}
-          alt="Shoes"
+          alt="Image"
           className="rounded-xl object-cover"
         />
       </div>

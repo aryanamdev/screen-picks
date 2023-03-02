@@ -4,7 +4,6 @@ import CardSkeleton from "../Skeleton/CardSkeleton.jsx";
 const Card = React.lazy(() => import("../movieCard/Card.jsx"));
 
 const MovieComponent = ({ modalDisplay, setId, page, genreId }) => {
-  
   const [content, setContent] = useState([]);
 
   const fetchMovies = async () => {

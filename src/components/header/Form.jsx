@@ -16,12 +16,7 @@ const Form = ({ search, setSearch }) => {
           className="w-full rounded-md bg-transparent placeholder:text-white outline-none text-white border-white placeholder:text-sm lg:placeholder:text-base"
           placeholder="Search Your Favourite"
         />
-        <button
-          className="px-3 text-black font-semibold hover:bg-gray-300 transition-colors py-1 bg-white rounded-md"
-          type="submit"
-        >
-          Search
-        </button>
+
       </form>
     </div>
   );

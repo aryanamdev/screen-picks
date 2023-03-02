@@ -1,5 +1,5 @@
 import React from "react";
-import { img_500 } from "../../config/config";
+import { img_500, unavailable } from "../../config/config";
 
 // closing modal function
 // onClick={()=>{modalDisplay(false)}}
@@ -20,7 +20,7 @@ export default function CustomModal({ id, modalDisplay }) {
           </button>
           <img
             className="w-40 rounded-xl lg:w-96 object-cover"
-            src={`${img_500}${id[2]}`}
+            src={id[2] ? `${img_500}${id[2]}` : unavailable}
             alt=""
           />
         </div>
