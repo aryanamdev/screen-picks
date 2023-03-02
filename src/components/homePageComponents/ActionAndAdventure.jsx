@@ -13,7 +13,7 @@ const ActionAndAdventure = ({ modalDisplay, setId, key }) => {
 
       console.log(data);
 
-      setContent(data.results.slice(0, 8));
+      setContent(data.results.slice(0, 12));
     } catch (error) {
       console.log(error);
     }

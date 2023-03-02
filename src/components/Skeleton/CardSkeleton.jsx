@@ -2,7 +2,7 @@ import React from "react";
 
 export default function CardSkeleton() {
   return (
-    <div className="relative animation cursor-pointer flex flex-col justify- gap-1 bg-gray-300 p-2 rounded-xl">
+    <div className="relative animation h-72 w-52 bg-gray-400 cursor-pointer flex flex-col justify- gap-1]p-2 rounded-xl">
       <div
         className="absolute h-10 w-10 text-white top-0 right-20 bg-gray-500 bg-clip-padding shadow-lg
 rounded-full p-2.5"

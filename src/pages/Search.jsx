@@ -1,0 +1,56 @@
+import React, { useState } from "react";
+import CustomModal from "../components/modal/CustomModal";
+import CustomPagination from "../components/Pagination/CustomPagination";
+import Form from "../components/header/Form";
+import SearchNav from "../components/searchComponents/SearchNav";
+import SearchComponent from "../components/searchComponents/SearchComponent";
+
+function Search() {
+  const [page, setPage] = useState(1);
+  const [modal, setModal] = useState(false);
+  const [id, setId] = useState([]);
+  const [apiValue, setApiValue] = useState("movie");
+  const [search, setSearch] = useState("");
+
+  //search value
+
+  //   API Value
+
+  const handleApiValue = (apiValue) => {
+    setApiValue(apiValue);
+  };
+
+  const modalDisplay = (value) => {
+    setModal(value);
+  };
+
+  return (
+    <>
+      <Form search={search} setSearch={setSearch} />
+
+      <SearchNav apiValue={apiValue} handleApiValue={handleApiValue} />
+
+      {modal && (
+        <CustomModal
+          id={id}
+          title={title}
+          poster={poster}
+          releaseDate={releaseDate}
+          rating={rating}
+          overview={overview}
+          modalDisplay={modalDisplay}
+        />
+      )}
+      <SearchComponent
+        modalDisplay={modalDisplay}
+        setId={setId}
+        page={page}
+        search={search}
+        apiValue={apiValue}
+      />
+      <CustomPagination setPage={setPage} page={page} />
+    </>
+  );
+}
+
+export default Search;

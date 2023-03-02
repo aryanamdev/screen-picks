@@ -2,41 +2,43 @@ import React, { Suspense, useEffect, useState } from "react";
 import axios from "axios";
 import CardSkeleton from "../Skeleton/CardSkeleton.jsx";
 const Card = React.lazy(() => import("../movieCard/Card.jsx"));
+import { API_KEY } from "../../config/config.js";
 
-const Romance = ({ modalDisplay, setId, key }) => {
+const SearchComponent = ({ modalDisplay, setId, page, search, apiValue }) => {
   const [content, setContent] = useState([]);
 
-  const fetchTrending = async () => {
+  const fetchMovies = async () => {
     try {
       const { data } = await axios.get(`
-      https://api.themoviedb.org/3/discover/movie?api_key=36c2c7be701e8ef2309e13bfdf25e942&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=true&with_watch_monetization_types=flatrate&pages=1&with_genres=10749`);
+      https://api.themoviedb.org/3/search/${
+        apiValue === "movie" ? "movie" : "tv"
+      }?api_key=${API_KEY}&language=en-US&query=${search}&page=${page}&include_adult=false`);
 
+      console.log(apiValue);
+      console.log(search);
       console.log(data);
 
-      setContent(data.results.slice(0,8));
+      setContent(data.results.slice(0, data.results.length - 2));
     } catch (error) {
       console.log(error);
     }
   };
 
   useEffect(() => {
-    fetchTrending();
-  }, []);
+    fetchMovies();
+  }, [page, search, apiValue]);
 
   return (
-    <div className="pl-6 lg:pl-8 mt-8 pb-4">
-      <h2 className="text-white text-center lg:text-left font-medium text-2xl lg:text-2xl mb-6">
-        Romance
-      </h2>
-      <div className="carousel carousel-center max-w-full space-x-4 rounded-box">
+    <div className="px-6 h-[140vh] lg:p-8 mt-6 pb-10 w-full">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-y-5 place-items-center  rounded-box">
         {content &&
           content.map((val) => {
             return (
               <Suspense key={val.id} fallback={<CardSkeleton />}>
                 <Card
+                  key={val.id}
                   modalDisplay={modalDisplay}
                   setId={setId}
-                  key={val.id}
                   id={val.id}
                   title={val.title || val.original_name || val.name}
                   poster={val.poster_path}
@@ -53,4 +55,4 @@ const Romance = ({ modalDisplay, setId, key }) => {
   );
 };
 
-export default Romance;
+export default SearchComponent;

@@ -22,3 +22,5 @@ const genre = [
   { id: 10752, name: "War" },
   { id: 37, name: "Western" },
 ];
+
+export const API_KEY = "36c2c7be701e8ef2309e13bfdf25e942";

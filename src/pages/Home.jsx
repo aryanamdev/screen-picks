@@ -3,7 +3,9 @@ import TrendingMovies from "../components/homePageComponents/TrendingMovies";
 import CustomModal from "../components/modal/CustomModal";
 import GenreComponent from "../components/genre/genreComponent";
 import ActionAndAdventure from "../components/homePageComponents/ActionAndAdventure";
-import Romance from "../components/homePageComponents/Romance";
+import Romance from "../components/homePageComponents/Documentaries";
+import Horror from "../components/homePageComponents/DontGetScared";
+import TopRatedShows from "../components/homePageComponents/TopRatedShows";
 
 function Home() {
   const [modal, setModal] = useState(false);
@@ -35,6 +37,18 @@ function Home() {
       <TrendingMovies modalDisplay={modalDisplay} setId={setId} />
       <ActionAndAdventure modalDisplay={modalDisplay} setId={setId} />
       <Romance modalDisplay={modalDisplay} setId={setId} />
+      <Horror modalDisplay={modalDisplay} setId={setId} />
+      <TopRatedShows modalDisplay={modalDisplay} setId={setId} />
+      <div className="flex">
+        <div
+          onClick={() => {
+            window.scroll(0, 0);
+          }}
+          className="my-10  text-center mx-auto cursor-pointer bg-purple-400 text-white p-3 uppercase font-semibold rounded-md"
+        >
+          Jump to Top
+        </div>
+      </div>
     </>
   );
 }
