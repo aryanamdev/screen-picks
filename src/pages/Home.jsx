@@ -6,6 +6,7 @@ import ActionAndAdventure from "../components/homePageComponents/ActionAndAdvent
 import Romance from "../components/homePageComponents/Documentaries";
 import Horror from "../components/homePageComponents/DontGetScared";
 import TopRatedShows from "../components/homePageComponents/TopRatedShows";
+import Attribution from "../components/attributin/Attribution";
 
 function Home() {
   const [modal, setModal] = useState(false);
@@ -49,6 +50,7 @@ function Home() {
           Jump to Top
         </div>
       </div>
+      <Attribution />
     </>
   );
 }

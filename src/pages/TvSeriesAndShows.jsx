@@ -3,6 +3,7 @@ import CustomModal from "../components/modal/CustomModal";
 import TvComponent from "../components/seriesComponents/TvComponent";
 import CustomPagination from "../components/Pagination/CustomPagination";
 import SeriesGenreComponent from "../components/genre/seriesGenre";
+import Attribution from "../components/attributin/Attribution";
 
 function TvSeries() {
   const [page, setPage] = useState(1);
@@ -49,6 +50,7 @@ function TvSeries() {
         page={page}
       />
       <CustomPagination setPage={setPage} page={page} />
+      <Attribution />
     </>
   );
 }

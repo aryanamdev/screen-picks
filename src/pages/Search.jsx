@@ -4,6 +4,7 @@ import CustomPagination from "../components/Pagination/CustomPagination";
 import Form from "../components/header/Form";
 import SearchNav from "../components/searchComponents/SearchNav";
 import SearchComponent from "../components/searchComponents/SearchComponent";
+import Attribution from "../components/attributin/Attribution";
 
 function Search() {
   const [page, setPage] = useState(1);
@@ -51,8 +52,10 @@ function Search() {
         apiValue={apiValue}
       />
       <CustomPagination setPage={setPage} page={page} />
+      <Attribution />
     </>
   );
 }
+
 
 export default Search;

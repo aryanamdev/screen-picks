@@ -3,6 +3,7 @@ import CustomModal from "../components/modal/CustomModal";
 import MovieComponent from "../components/moviesComponents/MovieComponent";
 import CustomPagination from "../components/Pagination/CustomPagination";
 import GenreComponent from "../components/genre/genreComponent";
+import Attribution from "../components/attributin/Attribution";
 
 function Movies() {
   const [page, setPage] = useState(1);
@@ -45,6 +46,7 @@ function Movies() {
         page={page}
       />
       <CustomPagination setPage={setPage} page={page} />
+      <Attribution />
     </>
   );
 }
