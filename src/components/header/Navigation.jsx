@@ -16,8 +16,8 @@ function Navigation() {
             onClick={(e) => setButton(e.target.innerText)}
             className={
               buttonVal === "Home"
-                ? "p-3 bg-purple-900 hover:bg-[#ccadf2] text-white lg:text-lg text-sm rounded-md transition-colors"
-                : "p-3 bg-[#AD7BE9] hover:bg-[#ccadf2] text-white lg:text-lg text-sm rounded-md transition-colors"
+                ? " bg-purple-900 hover:bg-purple-900 active:scale-95 text-white lg:text-lg text-sm rounded-md transition-colors p-3"
+                : " bg-[#AD7BE9] hover:bg-purple-900 active:scale-95 text-white lg:text-lg text-sm rounded-md transition-colors p-3"
             }
           >
             <Link to="/">Home</Link>
@@ -26,8 +26,8 @@ function Navigation() {
             onClick={(e) => setButton(e.target.innerText)}
             className={
               buttonVal === "Movies"
-                ? "p-3 bg-purple-900 hover:bg-[#ccadf2] text-white lg:text-lg text-sm rounded-md transition-colors"
-                : "p-3 bg-[#AD7BE9] hover:bg-[#ccadf2] text-white lg:text-lg text-sm rounded-md transition-colors"
+                ? " bg-purple-900 hover:bg-purple-900 active:scale-95 text-white lg:text-lg text-sm rounded-md transition-colors p-3 "
+                : " bg-[#AD7BE9] hover:bg-purple-900 active:scale-95 text-white lg:text-lg text-sm rounded-md transition-colors p-3"
             }
           >
             <Link to="/movies">Movies</Link>
@@ -36,8 +36,8 @@ function Navigation() {
             onClick={(e) => setButton(e.target.innerText)}
             className={
               buttonVal === "Series and Shows"
-                ? "p-3 bg-purple-900 hover:bg-[#ccadf2] text-white lg:text-lg text-sm rounded-md transition-colors"
-                : "p-3 bg-[#AD7BE9] hover:bg-[#ccadf2] text-white lg:text-lg text-sm rounded-md transition-colors"
+                ? " bg-purple-900 hover:bg-purple-900 active:scale-95 text-white lg:text-lg text-sm rounded-md transition-colors p-3"
+                : " bg-[#AD7BE9] hover:bg-purple-900 active:scale-95 text-white lg:text-lg text-sm rounded-md transition-colors p-3"
             }
           >
             <Link to="/seriesAndShows">Series and Shows</Link>
@@ -46,8 +46,8 @@ function Navigation() {
             onClick={(e) => setButton(e.target.innerText)}
             className={
               buttonVal === "Search"
-                ? "p-3 bg-purple-900 hover:bg-[#ccadf2] text-white lg:text-lg text-sm rounded-md transition-colors"
-                : "p-3 bg-[#AD7BE9] hover:bg-[#ccadf2] text-white lg:text-lg text-sm rounded-md transition-colors"
+                ? " bg-purple-900 hover:bg-purple-900 active:scale-95 text-white lg:text-lg text-sm rounded-md transition-colors p-3"
+                : " bg-[#AD7BE9] hover:bg-purple-900 active:scale-95 text-white lg:text-lg text-sm rounded-md transition-colors p-3"
             }
           >
             <Link to="/search">Search</Link>
