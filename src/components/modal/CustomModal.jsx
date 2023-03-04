@@ -15,11 +15,15 @@ export default function CustomModal({ id, modalDisplay }) {
           >
             x
           </button>
-          <img
-            className="w-40 rounded-xl lg:w-96 object-cover"
-            src={id[2] ? `${img_500}${id[2]}` : unavailable}
-            alt=""
-          />
+          <picture>
+            <source type="image/webp" />
+            <img
+              loading="lazy"
+              className="w-40 rounded-xl lg:w-96 object-cover"
+              src={id[2] ? `${img_500}${id[2]}` : unavailable}
+              alt=""
+            />
+          </picture>
         </div>
         <div className="flex flex-col  gap-3 lg:gap-6 lg:w-1/2 items-center lg:items-start text-md lg:text-xl lg:pl-20">
           <h1 className="text-left movie-name text-white bg-violet-500 font-raleway font-bold p-3 rounded-md tracking-wide uppercase">

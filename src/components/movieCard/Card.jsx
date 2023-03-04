@@ -25,16 +25,16 @@ const Card = ({
       >
         {rating.toFixed(1)}
       </div>
-      <div className="w-36 lg:w-48">
+      <picture className="w-36 lg:w-48">
+        <source type="image/webp" />
         <img
-          
           loading="lazy"
           // style={{ width: "144px", height: "192px" }}
           src={poster ? `${img_300}/${poster}` : unavailable}
           alt="Image"
           className="rounded-xl object-cover"
         />
-      </div>
+      </picture>
     </div>
   );
 };

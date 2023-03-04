@@ -32,8 +32,7 @@
 <br>
 
 ## Overview:
-![img](assets/screenPicks.png)
-
+![img](assets/siteimg.jpg)
 <br>
 
 ## To Run Locally:
