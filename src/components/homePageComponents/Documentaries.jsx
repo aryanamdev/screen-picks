@@ -1,27 +1,16 @@
 import React, { Suspense, useEffect, useState } from "react";
-import axios from "axios";
 import CardSkeleton from "../Skeleton/CardSkeleton.jsx";
 const Card = React.lazy(() => import("../movieCard/Card.jsx"));
 import ScrollContainer from "react-indiana-drag-scroll";
+import { fetchTrending } from "../../utils/fetchByGenre.js";
 
 const Romance = ({ modalDisplay, setId, key }) => {
   const [content, setContent] = useState([]);
 
-  const fetchTrending = async () => {
-    try {
-      const { data } = await axios.get(`
-      https://api.themoviedb.org/3/discover/movie?api_key=36c2c7be701e8ef2309e13bfdf25e942&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=true&page=1&with_genres=16`);
-
-      console.log(data);
-
-      setContent(data.results.slice(0, 12));
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  const genre = 16;
 
   useEffect(() => {
-    fetchTrending();
+    fetchTrending(setContent, genre);
   }, []);
 
   return (
