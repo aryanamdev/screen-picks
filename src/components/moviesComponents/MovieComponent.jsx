@@ -12,7 +12,7 @@ const MovieComponent = ({ modalDisplay, setId, page, genreId }) => {
 
   return (
     <div className="px-6 lg:p-8 mt-6 pb-10 w-full">
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-y-5 place-items-center  rounded-box">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-y-5 place-items-center rounded-box">
         {content &&
           content.map((val) => {
             return (

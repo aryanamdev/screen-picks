@@ -17,7 +17,7 @@ const Card = ({
         modalDisplay(true);
         setId([id, title, poster, releaseDate, rating, overview]);
       }}
-      className="relative cursor-pointer  flex flex-col justify- gap-1 bg-gray-400 hover:bg-gray-200 p-2 rounded-xl bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-25"
+      className="relative hover:scale-105 h-72 cursor-pointer flex flex-col justify- gap-1 bg-gray-400 hover:bg-gray-200 p-2 rounded-md bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-25"
     >
       <div
         className="absolute text-white top-0 right-14 lg:right-20 bg-indigo-900 bg-clip-padding backdrop-filter backdrop-blur-3xl shadow-lg border border-gray-100
@@ -25,14 +25,15 @@ const Card = ({
       >
         {rating.toFixed(1)}
       </div>
-      <picture className="w-36 lg:w-48">
+      <picture className="w-36 h-full lg:w-48">
         <source type="image/webp" />
         <img
           loading="lazy"
+          style={{ height: "100%", width: "100%" }}
           // style={{ width: "144px", height: "192px" }}
           src={poster ? `${img_300}/${poster}` : unavailable}
           alt="Image"
-          className="rounded-xl object-cover"
+          className="rounded-md object-cover"
         />
       </picture>
     </div>

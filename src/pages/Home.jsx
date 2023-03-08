@@ -1,11 +1,9 @@
 import React, { useState } from "react";
-import TrendingMovies from "../components/homePageComponents/TrendingMovies";
+import {
+  TrendingMovies,
+} from "./homePageComponents";
 import CustomModal from "../components/modal/CustomModal";
-import GenreComponent from "../components/genre/genreComponent";
-import ActionAndAdventure from "../components/homePageComponents/ActionAndAdventure";
-import Romance from "../components/homePageComponents/Documentaries";
-import Horror from "../components/homePageComponents/DontGetScared";
-import TopRatedShows from "../components/homePageComponents/TopRatedShows";
+
 import Attribution from "../components/attribution/Attribution";
 
 function Home() {
@@ -36,10 +34,7 @@ function Home() {
         />
       )}
       <TrendingMovies modalDisplay={modalDisplay} setId={setId} />
-      <ActionAndAdventure modalDisplay={modalDisplay} setId={setId} />
-      <Romance modalDisplay={modalDisplay} setId={setId} />
-      <Horror modalDisplay={modalDisplay} setId={setId} />
-      <TopRatedShows modalDisplay={modalDisplay} setId={setId} />
+
       <div className="flex">
         <div
           onClick={() => {

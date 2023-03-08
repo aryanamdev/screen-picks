@@ -8,50 +8,46 @@ import Search from "../../pages/Search";
 function Navigation() {
   const [buttonVal, setButton] = useState("Home");
 
+  const navigation = [
+    {
+      pageName: "Home",
+      route: "/",
+      id: 1,
+    },
+    {
+      pageName: "Movies",
+      route: "/movies",
+      id: 2,
+    },
+    {
+      pageName: "Series and Shows",
+      route: "/seriesAndShows",
+      id: 3,
+    },
+    {
+      pageName: "Search",
+      route: "/search",
+      id: 4,
+    },
+  ];
+
   return (
     <>
-      <nav className="text-sm lg:text-lg flex text-white font-medium justify-center mt-4">
+      <nav className="text-sm lg:text-lg flex text-white font-medium justify-center mt-2">
         <ul className="flex gap-3">
-          <li
-            onClick={(e) => setButton(e.target.innerText)}
-            className={
-              buttonVal === "Home"
-                ? " bg-purple-900 hover:bg-purple-900 active:scale-95 text-white lg:text-lg text-sm rounded-md transition-colors p-3"
-                : " bg-[#AD7BE9] hover:bg-purple-900 active:scale-95 text-white lg:text-lg text-sm rounded-md transition-colors p-3"
-            }
-          >
-            <Link to="/">Home</Link>
-          </li>
-          <li
-            onClick={(e) => setButton(e.target.innerText)}
-            className={
-              buttonVal === "Movies"
-                ? " bg-purple-900 hover:bg-purple-900 active:scale-95 text-white lg:text-lg text-sm rounded-md transition-colors p-3 "
-                : " bg-[#AD7BE9] hover:bg-purple-900 active:scale-95 text-white lg:text-lg text-sm rounded-md transition-colors p-3"
-            }
-          >
-            <Link to="/movies">Movies</Link>
-          </li>
-          <li
-            onClick={(e) => setButton(e.target.innerText)}
-            className={
-              buttonVal === "Series and Shows"
-                ? " bg-purple-900 hover:bg-purple-900 active:scale-95 text-white lg:text-lg text-sm rounded-md transition-colors p-3"
-                : " bg-[#AD7BE9] hover:bg-purple-900 active:scale-95 text-white lg:text-lg text-sm rounded-md transition-colors p-3"
-            }
-          >
-            <Link to="/seriesAndShows">Series and Shows</Link>
-          </li>
-          <li
-            onClick={(e) => setButton(e.target.innerText)}
-            className={
-              buttonVal === "Search"
-                ? " bg-purple-900 hover:bg-purple-900 active:scale-95 text-white lg:text-lg text-sm rounded-md transition-colors p-3"
-                : " bg-[#AD7BE9] hover:bg-purple-900 active:scale-95 text-white lg:text-lg text-sm rounded-md transition-colors p-3"
-            }
-          >
-            <Link to="/search">Search</Link>
-          </li>
+          {navigation.map((nav) => (
+            <li
+              key={nav.id}
+              onClick={(e) => setButton(e.target.innerText)}
+              className={
+                buttonVal === nav.pageName
+                  ? " active:scale-95 text-blue-400 lg:text-lg text-sm rounded-md transition-colors p-3"
+                  : "  active:scale-95 text-white lg:text-lg text-sm rounded-md transition-colors p-3"
+              }
+            >
+              <Link to={nav.route}>{nav.pageName}</Link>
+            </li>
+          ))}
         </ul>
       </nav>
       <Routes>

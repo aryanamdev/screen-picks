@@ -4,7 +4,6 @@ import { img_500, unavailable } from "../../config/config";
 export default function CustomModal({ id, modalDisplay }) {
   return (
     <div className="fixed flex flex-col lg:flex-row lg:justify-center items-center h-full backdrop-brightness-50 top-0 p-3 z-20 shadow-2xl bg-purple-900 rounded-md bg-clip-padding backdrop-filter backdrop-blur-2xl bg-opacity-40">
-      {/* <h3>{id[0]}</h3> */}
       <div className=" relative flex flex-col gap-8 lg:gap-0 lg:flex-row lg:w-8/12 items-center bg-body  rounded-xl p-8 lg:p-0">
         <div className="flex justify-center lg:justify-start">
           <button

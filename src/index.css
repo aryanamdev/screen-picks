@@ -11,7 +11,7 @@ body {
 @media screen and (min-width: 600px) {
   html,
   body {
-    background-color: #2e1e45;
+    background-color: #0b0216;
     scroll-behavior: smooth;
     scroll-snap-align: smooth;
   }
@@ -26,3 +26,10 @@ body {
   animation: pulse 1s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
+.overflow-scroll::-webkit-scrollbar {
+  display: none;
+}
+.overflow-scroll{
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}

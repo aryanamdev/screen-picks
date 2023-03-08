@@ -13,8 +13,6 @@ function Search() {
   const [apiValue, setApiValue] = useState("movie");
   const [search, setSearch] = useState("");
 
-  //search value
-
   //   API Value
 
   const handleApiValue = (apiValue) => {
