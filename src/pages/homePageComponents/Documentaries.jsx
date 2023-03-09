@@ -4,7 +4,7 @@ import { fetchByGenre } from "../../utils/fetchByGenre.js";
 import CardSkeleton from "../../components/Skeleton/CardSkeleton.jsx";
 import { movieContext } from "../../context/MovieContext.jsx";
 
-const Documentaries = ({ modalDisplay, setId, key }) => {
+const Documentaries = ({ modalDisplay, setId }) => {
   const { skeleton } = useContext(movieContext);
 
   const [content, setContent] = useState([]);

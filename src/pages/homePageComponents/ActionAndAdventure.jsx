@@ -4,8 +4,8 @@ import { fetchByGenre } from "../../utils/fetchByGenre.js";
 import { movieContext } from "../../context/MovieContext.jsx";
 import CardSkeleton from "../../components/Skeleton/CardSkeleton.jsx";
 
-const ActionAndAdventure = ({ modalDisplay, setId, key }) => {
-  const { content, setContent, skeleton, setSkeleton } =
+const ActionAndAdventure = ({ modalDisplay, setId }) => {
+  const { content, setContent, skeleton } =
     useContext(movieContext);
 
   useEffect(() => {

@@ -7,9 +7,7 @@ import {
   Documentaries,
 } from "./homePageComponents";
 import CustomModal from "../components/modal/CustomModal";
-import { Splide, SplideSlide } from "@splidejs/react-splide";
 import Attribution from "../components/attribution/Attribution";
-import { img_300 } from "../config/config";
 
 function Home() {
   const [modal, setModal] = useState(false);
