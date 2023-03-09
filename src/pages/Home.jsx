@@ -1,10 +1,15 @@
 import React, { useState } from "react";
 import {
   TrendingMovies,
+  ActionAndAdventure,
+  Horror,
+  ScienceFiction,
+  Documentaries,
 } from "./homePageComponents";
 import CustomModal from "../components/modal/CustomModal";
-
+import { Splide, SplideSlide } from "@splidejs/react-splide";
 import Attribution from "../components/attribution/Attribution";
+import { img_300 } from "../config/config";
 
 function Home() {
   const [modal, setModal] = useState(false);
@@ -34,13 +39,17 @@ function Home() {
         />
       )}
       <TrendingMovies modalDisplay={modalDisplay} setId={setId} />
+      <ActionAndAdventure modalDisplay={modalDisplay} setId={setId} />
+      <Horror modalDisplay={modalDisplay} setId={setId} />
+      <ScienceFiction modalDisplay={modalDisplay} setId={setId} />
+      <Documentaries modalDisplay={modalDisplay} setId={setId} />
 
       <div className="flex">
         <div
           onClick={() => {
             window.scroll(0, 0);
           }}
-          className="my-10  text-center mx-auto cursor-pointer bg-purple-400 text-white p-3 uppercase font-semibold rounded-md"
+          className="my-10 text-center mx-auto cursor-pointer btn-primary btn text-white p-3 uppercase font-semibold rounded-md"
         >
           Jump to Top
         </div>

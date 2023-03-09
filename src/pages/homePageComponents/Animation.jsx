@@ -1,21 +1,22 @@
 import React, { useContext, useEffect, useState } from "react";
 import Card from "../../components/movieCard/Card.jsx";
-import { fetchTrending } from "../../utils/fetchTrending";
-import { movieContext } from "../../context/MovieContext.jsx";
+import { fetchByGenre } from "../../utils/fetchByGenre.js";
 import CardSkeleton from "../../components/Skeleton/CardSkeleton.jsx";
+import { movieContext } from "../../context/MovieContext.jsx";
 
-const TrendingMovies = ({ modalDisplay, setId, key }) => {
+const Animation = ({ modalDisplay, setId, key }) => {
+  const { skeleton } = useContext(movieContext);
+
   const [content, setContent] = useState([]);
-  const { skeleton, setSkeleton } = useContext(movieContext);
 
   useEffect(() => {
-    fetchTrending(setContent, setSkeleton);
+    fetchByGenre(setContent, "16");
   }, []);
 
   return (
-    <div className="pl-6 lg:pl-8 mt-16 pb-4">
-      <h2 className="text-white text-center lg:text-left font-medium text-2xl lg:text-2xl lg:mb-6">
-        Trending Movies
+    <div className="pl-6 lg:pl-8 mt-4 lg:mt-8 pb-4">
+      <h2 className="text-white text-center lg:text-left font-medium text-2xl lg:text-2xl  lg:mb-6">
+        Animated Picks
       </h2>
       <div className="flex overflow-scroll gap-4 p-2 h-80 items-center">
         {!skeleton
@@ -43,4 +44,4 @@ const TrendingMovies = ({ modalDisplay, setId, key }) => {
   );
 };
 
-export default TrendingMovies;
+export default Animation;

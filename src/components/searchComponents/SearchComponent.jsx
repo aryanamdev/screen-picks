@@ -1,38 +1,13 @@
 import React, { Suspense, useEffect, useState } from "react";
-import axios from "axios";
 import CardSkeleton from "../Skeleton/CardSkeleton.jsx";
 const Card = React.lazy(() => import("../movieCard/Card.jsx"));
-import { API_KEY } from "../../config/config.js";
+import { fetchSearch } from "../../utils/fetchSearch.js";
 
-const SearchComponent = ({
-  modalDisplay,
-  setId,
-  page,
-  search,
-  apiValue,
-  value,
-}) => {
+const SearchComponent = ({ modalDisplay, setId, page, search, apiValue }) => {
   const [content, setContent] = useState([]);
 
-  const fetchMovies = async () => {
-    try {
-      const { data } = await axios.get(`
-      https://api.themoviedb.org/3/search/${
-        apiValue === "movie" ? "movie" : "tv"
-      }?api_key=${API_KEY}&language=en-US&query=${search}&page=${page}&include_adult=false`);
-
-      console.log(apiValue);
-      console.log(search);
-      console.log(data);
-
-      setContent(data.results.slice(0, data.results.length - 2));
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
   useEffect(() => {
-    fetchMovies();
+    fetchSearch(apiValue, search, page, setContent);
   }, [page, search, apiValue]);
 
   return (

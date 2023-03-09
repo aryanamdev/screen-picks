@@ -4,6 +4,7 @@ import Home from "../../pages/Home";
 import Movies from "../../pages/Movies";
 import TvSeriesAndShows from "../../pages/TvSeriesAndShows";
 import Search from "../../pages/Search";
+import Info from "../modal/Info";
 
 function Navigation() {
   const [buttonVal, setButton] = useState("Home");
@@ -41,7 +42,7 @@ function Navigation() {
               onClick={(e) => setButton(e.target.innerText)}
               className={
                 buttonVal === nav.pageName
-                  ? " active:scale-95 text-blue-400 lg:text-lg text-sm rounded-md transition-colors p-3"
+                  ? " active:scale-95 text-blue-400 glow lg:text-lg text-sm rounded-md transition-colors p-3"
                   : "  active:scale-95 text-white lg:text-lg text-sm rounded-md transition-colors p-3"
               }
             >
@@ -53,6 +54,7 @@ function Navigation() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/movies" element={<Movies />} />
+        <Route path="/movies/:id" element={<Info />} />
         <Route path="/seriesAndShows" element={<TvSeriesAndShows />} />
         <Route path="/search" element={<Search />} />
       </Routes>

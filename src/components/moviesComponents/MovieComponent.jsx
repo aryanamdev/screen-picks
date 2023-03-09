@@ -1,10 +1,11 @@
-import React, { Suspense, useEffect, useState } from "react";
+import React, { Suspense, useContext, useEffect, useState } from "react";
 import CardSkeleton from "../Skeleton/CardSkeleton.jsx";
 const Card = React.lazy(() => import("../movieCard/Card.jsx"));
 import { fetchMovies } from "../../utils/fetchMovies.js";
+import { movieContext } from "../../context/MovieContext.jsx";
 
 const MovieComponent = ({ modalDisplay, setId, page, genreId }) => {
-  const [content, setContent] = useState([]);
+  const { content, setContent } = useContext(movieContext);
 
   useEffect(() => {
     fetchMovies(setContent, page, genreId);

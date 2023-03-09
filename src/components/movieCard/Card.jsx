@@ -10,6 +10,7 @@ const Card = ({
   modalDisplay,
   setId,
   overview,
+  backdrop_path,
 }) => {
   return (
     <div
@@ -17,10 +18,10 @@ const Card = ({
         modalDisplay(true);
         setId([id, title, poster, releaseDate, rating, overview]);
       }}
-      className="relative hover:scale-105 h-72 cursor-pointer flex flex-col justify- gap-1 bg-gray-400 hover:bg-gray-200 p-2 rounded-md bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-25"
+      className="relative hover:scale-105 h-56 lg:h-72 cursor-pointer flex flex-col  gap-1 bg-gray-400 hover:bg-gray-200 p-1 rounded-md bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-25"
     >
       <div
-        className="absolute text-white top-0 right-14 lg:right-20 bg-indigo-900 bg-clip-padding backdrop-filter backdrop-blur-3xl shadow-lg border border-gray-100
+        className="absolute text-white top-0 right-14 lg:right-20 bg-primary bg-clip-padding backdrop-filter backdrop-blur-3xl shadow-lg border border-gray-100
  rounded-full p-2.5"
       >
         {rating.toFixed(1)}

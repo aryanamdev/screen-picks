@@ -3,8 +3,8 @@ import { img_500, unavailable } from "../../config/config";
 
 export default function CustomModal({ id, modalDisplay }) {
   return (
-    <div className="fixed flex flex-col lg:flex-row lg:justify-center items-center h-full backdrop-brightness-50 top-0 p-3 z-20 shadow-2xl bg-purple-900 rounded-md bg-clip-padding backdrop-filter backdrop-blur-2xl bg-opacity-40">
-      <div className=" relative flex flex-col gap-8 lg:gap-0 lg:flex-row lg:w-8/12 items-center bg-body  rounded-xl p-8 lg:p-0">
+    <div className="fixed flex flex-col lg:flex-row lg:justify-center items-center h-full backdrop-brightness-50 top-0 p-3 z-20 shadow-2xl bg-blue-900 rounded-md bg-clip-padding backdrop-filter backdrop-blur-2xl bg-opacity-40">
+      <div className=" relative flex flex-col gap-8 lg:gap-0 lg:flex-row lg:w-8/12 items-center bg-blue-900  rounded-xl p-8 lg:p-0">
         <div className="flex justify-center lg:justify-start">
           <button
             onClick={() => {
@@ -25,7 +25,7 @@ export default function CustomModal({ id, modalDisplay }) {
           </picture>
         </div>
         <div className="flex flex-col  gap-3 lg:gap-6 lg:w-1/2 items-center lg:items-start text-md lg:text-xl lg:pl-20">
-          <h1 className="text-left movie-name text-white bg-violet-500 font-raleway font-bold p-3 rounded-md tracking-wide uppercase">
+          <h1 className="text-left movie-name text-white bg-accent font-raleway font-bold p-3 rounded-md tracking-wide uppercase">
             {id[1]}
           </h1>
 
@@ -43,7 +43,7 @@ export default function CustomModal({ id, modalDisplay }) {
             </h3>
 
             {/* total rating */}
-            <div className="stat bg-purple-900 rounded-lg  w-48">
+            <div className="stat bg-blue-700 rounded-lg  w-48">
               <div className="stat-figure text-accent">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
