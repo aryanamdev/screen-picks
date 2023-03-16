@@ -15,7 +15,7 @@ const TrendingMovies = ({ modalDisplay, setId, key }) => {
   return (
     <div className="pl-6 lg:pl-8 mt-16 pb-4">
       <h2 className="text-white text-center lg:text-left font-medium text-2xl lg:text-2xl lg:mb-6">
-        Trending Movies
+        Trending Movies and Series
       </h2>
       <div className="flex overflow-scroll gap-4 p-2 h-80 items-center">
         {!skeleton

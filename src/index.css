@@ -62,3 +62,6 @@ body {
 .glow {
   box-shadow: 0em 0 1.3em -0.5em #6895d998;
 }
+#slider{
+  scroll-behavior: smooth;
+}

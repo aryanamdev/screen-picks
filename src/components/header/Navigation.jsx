@@ -54,7 +54,7 @@ function Navigation() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/movies" element={<Movies />} />
-        <Route path="/movies/:id" element={<Info />} />
+        <Route path="/movie/:id" element={<Info />} />
         <Route path="/seriesAndShows" element={<TvSeriesAndShows />} />
         <Route path="/search" element={<Search />} />
       </Routes>
