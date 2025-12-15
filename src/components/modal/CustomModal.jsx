@@ -1,4 +1,3 @@
-import React from "react";
 import { img_500, unavailable } from "../../config/config";
 
 export default function CustomModal({ id, modalDisplay }) {

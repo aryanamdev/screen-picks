@@ -11,7 +11,7 @@ const Card = ({
   setId,
   overview,
   backdrop_path,
-}) => {
+}) => { 
 
   return (
     <div
